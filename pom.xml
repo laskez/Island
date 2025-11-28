@@ -20,7 +20,6 @@
 
     <dependencies>
 
-        <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -28,7 +27,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Allure JUnit5 -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
@@ -36,7 +34,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- SLF4J logger -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -48,7 +45,6 @@
     <build>
         <plugins>
 
-            <!-- SUREFIRE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -75,7 +71,6 @@
                 </dependencies>
             </plugin>
 
-            <!-- COMPILER -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -86,28 +81,24 @@
                 </configuration>
             </plugin>
 
-            <!-- ALLURE -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.11.2</version>
             </plugin>
 
-            <!-- ✅ JACOCO (ГЛАВНОЕ ЧТО НУЖНО ПРЕПОДУ) -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.12</version>
                 <executions>
 
-                    <!-- Включить агент покрытия -->
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
 
-                    <!-- Сгенерировать HTML отчет -->
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
