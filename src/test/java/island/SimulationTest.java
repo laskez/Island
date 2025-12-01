@@ -2,24 +2,16 @@ package island;
 
 import animals.Rabbit;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Остров")
-@Feature("Симуляция")
 class SimulationTest {
 
     @Test
-    @Story("Рост растений")
-    @DisplayName("Шаг симуляции добавляет растения")
+    @DisplayName("Во время шага симуляции растения вырастают")
     void testGrowPlants() {
         Island island = new Island(2, 2);
         Simulation sim = new Simulation(island);
@@ -33,8 +25,7 @@ class SimulationTest {
     }
 
     @Test
-    @Story("Шаг симуляции")
-    @DisplayName("Шаг симуляции вызывается без ошибок")
+    @DisplayName("step() симуляции выполняется без ошибок")
     void testSimulationStep() {
         Island island = new Island(3,3);
         Simulation sim = new Simulation(island);
@@ -43,8 +34,7 @@ class SimulationTest {
     }
 
     @Test
-    @Story("Жизненные циклы")
-    @DisplayName("Животные совершают liveStep во время симуляции")
+    @DisplayName("Животные выполняют свой жизненный цикл в процессе шага симуляции")
     void testAnimalsRunLifeCycle() {
         Island island = new Island(3,3);
         Cell cell = island.getCell(1,1);

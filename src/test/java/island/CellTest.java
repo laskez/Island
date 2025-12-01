@@ -1,25 +1,15 @@
 package island;
 
-import animals.Rabbit;
-
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Остров")
-@Feature("Клетка")
 class CellTest {
 
     @Test
-    @Story("Создание клетки")
-    @DisplayName("Клетка хранит координаты X и Y")
+    @DisplayName("Клетка корректно хранит координаты")
     void testCoordinates() {
         Cell c = new Cell(4, 7);
 
@@ -28,8 +18,7 @@ class CellTest {
     }
 
     @Test
-    @Story("Списки содержимого")
-    @DisplayName("Списки животных и растений не null")
+    @DisplayName("Клетка инициализирует списки животных и растений")
     void testListsNotNull() {
         Cell c = new Cell(0, 0);
 

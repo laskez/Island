@@ -3,23 +3,16 @@ package animals;
 import island.Cell;
 import island.Island;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Животные")
-@Feature("Хищники")
 class BearTest {
 
     @Test
-    @Story("Движение")
-    @DisplayName("Медведь делает шаг")
+    @DisplayName("Медведь делает шаг по острову")
     void bearMoves() {
         Island island = new Island(3, 3);
         Cell start = island.getCell(1, 1);
@@ -33,7 +26,6 @@ class BearTest {
     }
 
     @Test
-    @Story("Еда")
     @DisplayName("Медведь пытается съесть мышь")
     void bearEatsMouse() {
         Island island = new Island(3, 3);

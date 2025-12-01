@@ -3,22 +3,15 @@ package animals;
 import island.Cell;
 import island.Island;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Животные")
-@Feature("Хищники")
 class WolfTest {
 
     @Test
-    @Story("Движение")
     @DisplayName("Волк делает шаг по острову")
     void wolfMoves() {
         Island island = new Island(3, 3);
@@ -33,8 +26,7 @@ class WolfTest {
     }
 
     @Test
-    @Story("Еда")
-    @DisplayName("Волк МОЖЕТ съесть кролика")
+    @DisplayName("Волк имеет шанс съесть кролика согласно config")
     void wolfEatsRabbit() {
         int chance = island.Config.getEatChance(AnimalType.WOLF, AnimalType.RABBIT);
 

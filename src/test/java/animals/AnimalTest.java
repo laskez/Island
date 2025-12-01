@@ -3,19 +3,12 @@ package animals;
 import island.Cell;
 import island.Island;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Животные")
-@Feature("Базовый класс Animal")
 class AnimalTest {
 
     static class TestAnimal extends Animal {
@@ -44,8 +37,7 @@ class AnimalTest {
     }
 
     @Test
-    @Story("Жизненный цикл")
-    @DisplayName("liveStep вызывает move/eat/reproduce")
+    @DisplayName("Животное выполняет полный жизненный цикл")
     void testLiveStep() {
         Island island = new Island(3, 3);
         Cell cell = island.getCell(1, 1);
@@ -61,8 +53,7 @@ class AnimalTest {
     }
 
     @Test
-    @Story("Смерть животного")
-    @DisplayName("die() делает животное мёртвым")
+    @DisplayName("Животное становится мертвым после вызова die()")
     void testDie() {
         Cell c = new Cell(0, 0);
         TestAnimal a = new TestAnimal(c);
@@ -73,8 +64,7 @@ class AnimalTest {
     }
 
     @Test
-    @Story("Голодание")
-    @DisplayName("При нулевой сытости животное умирает")
+    @DisplayName("Животное умирает при нулевой сытости")
     void testStarvation() {
         Island island = new Island(3, 3);
         Cell cell = island.getCell(1, 1);
@@ -88,8 +78,7 @@ class AnimalTest {
     }
 
     @Test
-    @Story("Движение между клетками")
-    @DisplayName("moveTo переносит животное в другую клетку")
+    @DisplayName("Животное корректно перемещается в другую клетку")
     void testMoveTo() {
         Island island = new Island(3, 3);
         Cell c1 = island.getCell(0, 0);

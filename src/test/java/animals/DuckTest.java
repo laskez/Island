@@ -4,23 +4,16 @@ import island.Cell;
 import island.Island;
 import plant.Plant;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Животные")
-@Feature("Травоядные")
 class DuckTest {
 
     @Test
-    @Story("Движение")
-    @DisplayName("Утка перемещается")
+    @DisplayName("Утка делает шаг")
     void duckMoves() {
         Island island = new Island(3,3);
         Cell start = island.getCell(1,1);
@@ -34,8 +27,7 @@ class DuckTest {
     }
 
     @Test
-    @Story("Еда растений")
-    @DisplayName("Утка ест растения")
+    @DisplayName("Утка питается растениями")
     void duckEatsPlants() {
         Island island = new Island(3,3);
         Cell cell = island.getCell(1,1);
@@ -52,7 +44,6 @@ class DuckTest {
     }
 
     @Test
-    @Story("Еда гусениц")
     @DisplayName("Утка может съесть гусеницу")
     void duckEatsCaterpillar() {
         Island island = new Island(3,3);

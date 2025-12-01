@@ -15,7 +15,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <junit.jupiter.version>5.10.0</junit.jupiter.version>
-        <allure.version>2.24.0</allure.version>
     </properties>
 
     <dependencies>
@@ -24,13 +23,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -49,26 +41,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
-
                 <configuration>
                     <useModulePath>false</useModulePath>
                     <testFailureIgnore>true</testFailureIgnore>
-
-                    <systemProperties>
-                        <property>
-                            <name>allure.results.directory</name>
-                            <value>target/allure-results</value>
-                        </property>
-                    </systemProperties>
                 </configuration>
-
-                <dependencies>
-                    <dependency>
-                        <groupId>io.qameta.allure</groupId>
-                        <artifactId>allure-junit5</artifactId>
-                        <version>${allure.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <plugin>
@@ -79,12 +55,6 @@
                     <source>17</source>
                     <target>17</target>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>2.11.2</version>
             </plugin>
 
             <plugin>

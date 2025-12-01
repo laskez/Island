@@ -1,23 +1,14 @@
 package island;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
-@Epic("Остров")
-@Feature("Карта острова")
 class IslandTest {
 
     @Test
-    @Story("Получение клеток")
-    @DisplayName("Можно получить клетку по координатам")
+    @DisplayName("Остров возвращает клетку по координатам")
     void testGetCell() {
         Island island = new Island(5, 5);
 
@@ -29,8 +20,7 @@ class IslandTest {
     }
 
     @Test
-    @Story("Границы карты")
-    @DisplayName("Клетка вне карты возвращает null")
+    @DisplayName("Остров возвращает null, если координаты вне границы")
     void testOutOfBounds() {
         Island island = new Island(5, 5);
 

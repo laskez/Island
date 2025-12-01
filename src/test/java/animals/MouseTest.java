@@ -4,22 +4,15 @@ import island.Cell;
 import island.Island;
 import plant.Plant;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Epic("Животные")
-@Feature("Травоядные")
 class MouseTest {
 
     @Test
-    @Story("Движение")
     @DisplayName("Мышь перемещается")
     void mouseMoves() {
         Island island = new Island(3,3);
@@ -34,7 +27,6 @@ class MouseTest {
     }
 
     @Test
-    @Story("Еда")
     @DisplayName("Мышь ест растения")
     void mouseEatsPlants() {
         Island island = new Island(3,3);
