@@ -94,3 +94,46 @@ class AnimalTest {
         assertTrue(c2.getAnimals().contains(a));
     }
 }
+
+@Test
+@DisplayName("Животное умирает при нулевой сытости в liveStep()")
+void diesFromStarvation() {
+    Island island = new Island(3, 3);
+    Cell cell = island.getCell(1, 1);
+
+    TestAnimal a = new TestAnimal(cell);
+    a.satiety = 0;
+
+    a.liveStep(island);
+
+    assertFalse(a.isAlive());
+}
+
+@Test
+@DisplayName("Метод die() делает животное мёртвым")
+void dieMarksDead() {
+    Cell cell = new Cell(0, 0);
+    TestAnimal a = new TestAnimal(cell);
+
+    a.die();
+
+    assertFalse(a.isAlive());
+}
+
+@Test
+@DisplayName("moveTo() корректно переносит животное в другую клетку")
+void moveToMovesAnimal() {
+    Island island = new Island(3, 3);
+    Cell c1 = island.getCell(0, 0);
+    Cell c2 = island.getCell(1, 1);
+
+    TestAnimal a = new TestAnimal(c1);
+    c1.getAnimals().add(a);
+
+    a.moveTo(c2);
+
+    assertEquals(c2, a.getCell());
+    assertFalse(c1.getAnimals().contains(a));
+    assertTrue(c2.getAnimals().contains(a));
+}
+
